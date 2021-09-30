@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
             command: 'troll',
             description: `Let's troll people.`,
             category: 'fun',
-            usage: `${client.config.prefix}ship [tag user]`
+            usage: `${client.config.prefix}troll [tag user]`
         })
     }
 
