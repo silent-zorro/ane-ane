@@ -8,24 +8,24 @@ import { IPackage, ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'dev',
-            description: 'Displays the info',
+            command: 'amt',
+            description: 'Brothers',
             category: 'misc',
-            usage: `${client.config.prefix}void`
+            usage: `${client.config.prefix}amt`
         })
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // eslint-disable-next-line @typescript-eslint/no-var-requires
         const pkg: IPackage = require(join(__dirname, '..', '..', '..', 'package.json'))
-        const image = this.client.assets.get('fb')
+        const image = this.client.assets.get('bros')
         if (!image) return void null
         return void M.reply(
             image,
             MessageType.image,
             undefined,
             undefined,
-            `🖤 *Cortana* 🖤\n\n👨🏾‍🚀 *Description: Devoloped by Isuru Anuradha*\n\n🌐 *FB: https://www.facebook.com/isuru.anuradha.Iz.Silent.Zorro*\n`
+            `🖤 *Brotherhood of AMT* 🖤\n`
         )
     }
 }
