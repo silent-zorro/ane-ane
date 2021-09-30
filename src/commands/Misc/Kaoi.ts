@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
             command: 'gcr',
             description: 'Displays the info',
             category: 'misc',
-            usage: `${client.config.prefix}kaoi`
+            usage: `Google Classroom`
         })
     }
 
