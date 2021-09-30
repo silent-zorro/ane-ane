@@ -18,11 +18,11 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // eslint-disable-next-line @typescript-eslint/no-var-requires
         const pkg: IPackage = require(join(__dirname, '..', '..', '..', 'package.json'))
-        const gif = this.client.assets.get('admin')
-        if (!gif) return void null
+        const video = this.client.assets.get('admin')
+        if (!video) return void null
         return void M.reply(
-            gif,
-            MessageType.gif,
+            video,
+            MessageType.video,
             undefined,
             undefined,
             `😂 *You want Admin Brh👋* 😂\n`
