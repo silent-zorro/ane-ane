@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
             description: 'sends you a neko photo.',
             aliases: ['neko'],
             category: 'fun',
-            usage: `${client.config.prefix}neko`
+            usage: `${client.config.prefix}cute`
         })
     }
 
