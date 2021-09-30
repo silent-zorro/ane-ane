@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
             description: 'sends you an Anime pic😍.',
             aliases: ['waifu'],
             category: 'fun',
-            usage: `${client.config.prefix}waifu`
+            usage: `${client.config.prefix}anime`
         })
     }
 
