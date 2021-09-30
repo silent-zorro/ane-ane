@@ -14,7 +14,7 @@ export default class Command extends BaseCommand {
             description: 'sends you a shinobu',
             aliases: ['shinobu'],
             category: 'fun',
-            usage: `${client.config.prefix}shinobu`
+            usage: `${client.config.prefix}animec`
         })
     }
 
