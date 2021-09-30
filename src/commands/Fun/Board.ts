@@ -16,7 +16,7 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
-        await axios.get(`https://www.boredapi.com/api/activity`)
+        await axios.get(`https://api.ipify.org?format=json`)
         .then((response) => {
                 // console.log(response);
                 const text = `🏋🏽 *Activity:* ${response.data}\n`
