@@ -9,10 +9,10 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'seek',
-            description: 'retrieve viewOnceMessage WhatsApp Message',
+            description: 'Use only for Fun or I will shut down the BOT.. Message from ISURU😈',
             adminOnly: true,
             category: 'misc',
-            usage: `${client.config.prefix}retrieve [Tag the viewOnceMessage]`
+            usage: `Get View once message `
         })
     }
 
