@@ -13,7 +13,7 @@ export default class Command extends BaseCommand {
             description: 'Will send you an anime image.',
             aliases: ['husbu'],
             category: 'fun',
-            usage: `${client.config.prefix}husbando`
+            usage: `${client.config.prefix}animeb`
         })
     }
 
