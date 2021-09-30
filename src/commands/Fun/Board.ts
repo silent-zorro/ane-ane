@@ -19,7 +19,7 @@ export default class Command extends BaseCommand {
         await axios.get(`https://www.boredapi.com/api/activity`)
         .then((response) => {
                 // console.log(response);
-                const text = `🏋🏽 *Activity:* ${response.data.content}\n\n*💫 Type:* ${response.data.author}`
+                const text = `🏋🏽 *Activity:* ${response.data}\n`
                 M.reply(text);
             }).catch(err => {
                 M.reply(`🔍 Error: ${err}`)
