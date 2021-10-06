@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'quote',
             description: 'random quote.',
-            aliases: ['q'],
+            aliases: ['quote'],
             category: 'fun',
             usage: `${client.config.prefix}quote`
         })
