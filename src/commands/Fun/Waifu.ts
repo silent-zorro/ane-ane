@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'anime',
             description: 'sends you an Anime pic😍.',
-            aliases: ['waifu'],
+            aliases: ['Sexy anime'],
             category: 'fun',
             usage: `${client.config.prefix}anime`
         })
