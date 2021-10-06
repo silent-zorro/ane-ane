@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
             description: 'Your ip details.',
             aliases: ['What you know about your ip?'],
             category: 'fun',
-            usage: `${client.config.prefix}fquote`
+            usage: `${client.config.prefix}ip`
         })
     }
 
