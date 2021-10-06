@@ -11,8 +11,8 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'animec',
-            description: 'sends you a shinobu',
-            aliases: ['shinobu'],
+            description: 'sends you a anime',
+            aliases: ['anime'],
             category: 'fun',
             usage: `${client.config.prefix}animec`
         })
