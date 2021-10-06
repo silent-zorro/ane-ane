@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
             description: 'random dog fact.',
             aliases: ['Do you know'],
             category: 'fun',
-            usage: `${client.config.prefix}fquote`
+            usage: `${client.config.prefix}dogf`
         })
     }
 
