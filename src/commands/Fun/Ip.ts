@@ -7,9 +7,9 @@ import axios from 'axios'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'fquote',
-            description: 'random famous quote.',
-            aliases: ['fq'],
+            command: 'ip',
+            description: 'Your ip details.',
+            aliases: ['What you know about your ip?'],
             category: 'fun',
             usage: `${client.config.prefix}fquote`
         })
@@ -17,10 +17,10 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         await axios
-            .get(`https://api.quotable.io/random?tags=technology,famous-quotes`)
+            .get(`https://freegeoip.app/json/`)
             .then((response) => {
                 // console.log(response);
-                const text = `📝 *Content:* ${response.data.content}\n\n*✍️ Author:* ${response.data.author}`
+                const text = `👨‍💻 *Ip:* ${response.data.ip}\n\n*🗺 Contry code:* ${response.data.country_code}\n\n*🌎 Country name:* ${response.data.country_name}\n\n*🌍 Region name:* ${response.data.region_name}\n\n*🌏 City name:* ${response.data.city}\n\n*⌚️ Time zone:* ${response.data.time_zone}`
                 M.reply(text)
             })
             .catch((err) => {
