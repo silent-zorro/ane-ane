@@ -11,8 +11,8 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'cute',
-            description: 'sends you a neko photo.',
-            aliases: ['neko'],
+            description: 'sends you a cute anime photo.',
+            aliases: ['hot cute'],
             category: 'fun',
             usage: `${client.config.prefix}cute`
         })
