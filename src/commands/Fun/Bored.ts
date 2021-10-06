@@ -7,9 +7,9 @@ import axios from 'axios'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'fquote',
-            description: 'random famous quote.',
-            aliases: ['fq'],
+            command: 'bored',
+            description: 'random activity.',
+            aliases: ['Be active'],
             category: 'fun',
             usage: `${client.config.prefix}fquote`
         })
@@ -17,10 +17,10 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         await axios
-            .get(`https://api.quotable.io/random?tags=technology,famous-quotes`)
+            .get(`https://www.boredapi.com/api/activity`)
             .then((response) => {
                 // console.log(response);
-                const text = `📝 *Content:* ${response.data.content}\n\n*✍️ Author:* ${response.data.author}`
+                const text = `🏋🏻 *Activity:* ${response.data.activity}`
                 M.reply(text)
             })
             .catch((err) => {
