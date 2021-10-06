@@ -9,17 +9,17 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'animeb',
-            description: 'Will send you an anime image.',
-            aliases: ['husbu'],
+            command: 'dogpic',
+            description: 'Will send you a cute dog image.',
+            aliases: ['Woof'],
             category: 'fun',
-            usage: `${client.config.prefix}animeb`
+            usage: `${client.config.prefix}dogpic`
         })
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://zxbott.herokuapp.com/husbu from the API using axios
-        const { data } = await axios.get('https://zxbott.herokuapp.com/husbu')
+        const { data } = await axios.get('https://dog.ceo/api/breeds/image/random')
         const buffer = await request.buffer(data.url).catch((e) => {
             return void M.reply(e.message)
         })
@@ -30,17 +30,17 @@ export default class Command extends BaseCommand {
                     MessageType.image,
                     undefined,
                     undefined,
-                    `Here your anime  ✨\n`,
+                    `Woof  🐶\n`,
                     undefined
                 ).catch((e) => {
                     console.log(`This error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
                     // console.log('Failed')
-                    M.reply(`Try again or use the link. Here's the URL: ${data.url}`)
+                    M.reply(`Try again or use the link. Here's the URL: ${data.message}`)
                 })
                 break
             } catch (e) {
                 // console.log('Failed2')
-                M.reply(`Try again or use the link. Here's the URL : ${data.url}`)
+                M.reply(`Try again or use the link. Here's the URL : ${data.message}`)
                 console.log(`This error occurs when an image is sent via M.reply()\n Parent Catch Block : \n${e}`)
             }
         }
