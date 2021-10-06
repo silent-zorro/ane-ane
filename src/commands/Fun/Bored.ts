@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
             description: 'random activity.',
             aliases: ['Be active'],
             category: 'fun',
-            usage: `${client.config.prefix}fquote`
+            usage: `${client.config.prefix}bored`
         })
     }
 
