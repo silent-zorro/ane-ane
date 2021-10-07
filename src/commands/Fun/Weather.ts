@@ -34,7 +34,7 @@ export default class Command extends BaseCommand {
                 let result = ``
                 let index = 1
                 for (const item of res.data?.items) {
-                    result += `*👾${index}.Title* : ${item.weather}\n*🔗Link* : ${response.data.weather}\n*📖Snippet* : ${item.snippet}\n\n`
+                    result += `*👾${index}.Title* : ${item.weather}\n*🔗Link* : ${item.data.weather}\n*📖Snippet* : ${item.snippet}\n\n`
                     index++
                 }
                 // return void M.reply(`🔍Command Used : ${Command.count} times\n Result for *${term}*\n\n\n ${result}`)
