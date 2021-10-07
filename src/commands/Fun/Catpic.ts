@@ -19,8 +19,8 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://zxbott.herokuapp.com/husbu from the API using axios
-        const { data } = await axios.get('https://api.thecatapi.com/v1/images/search')
-        const buffer = await request.buffer(data.url).catch((e) => {
+        const { data } = await axios.get('https://aws.random.cat/meow')
+        const buffer = await request.buffer(data.file).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
@@ -40,7 +40,7 @@ export default class Command extends BaseCommand {
                 break
             } catch (e) {
                 // console.log('Failed2')
-                M.reply(`Try again or use the link. Here's the URL : ${data.url}`)
+                M.reply(`Try again or use the link. Here's the URL : ${data.file}`)
                 console.log(`This error occurs when an image is sent via M.reply()\n Parent Catch Block : \n${e}`)
             }
         }
