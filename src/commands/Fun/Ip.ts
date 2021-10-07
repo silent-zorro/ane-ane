@@ -17,10 +17,10 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         await axios
-            .get(`https://api.ipify.org/?format=json`)
+            .get(`http://ip-api.com/json`)
             .then((response) => {
                 // console.log(response);
-                const text = `👨‍💻 *Ip:* ${response.data.ip}\n\n*🗺 Contry code:* ${response.data.country_code}\n\n*🌎 Country name:* ${response.data.country_name}\n\n*🌍 Region name:* ${response.data.region_name}\n\n*🌏 City name:* ${response.data.city}\n\n*⌚️ Time zone:* ${response.data.time_zone}`
+                const text = `👨‍💻 *Ip:* ${response.data.ip}\n\n*🗺 Contry code:* ${response.data.country_code}\n\n*🌎 Country name:* ${response.data.country}\n\n*🌍 Region name:* ${response.data.region_name}\n\n*🌏 City name:* ${response.data.city}\n\n*⌚️ Time zone:* ${response.data.time_zone}`
                 M.reply(text)
             })
             .catch((err) => {
