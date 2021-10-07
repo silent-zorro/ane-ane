@@ -10,10 +10,10 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'fox',
-            description: 'Will send you an anime image.',
-            aliases: ['husbu'],
+            description: 'Will send you a fox image.',
+            aliases: ['Awoooooo'],
             category: 'fun',
-            usage: `${client.config.prefix}animeb`
+            usage: `${client.config.prefix}fox`
         })
     }
 
@@ -30,12 +30,12 @@ export default class Command extends BaseCommand {
                     MessageType.image,
                     undefined,
                     undefined,
-                    `Here your anime  ✨\n`,
+                    `Awoooo  🦊\n`,
                     undefined
                 ).catch((e) => {
                     console.log(`This error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
                     // console.log('Failed')
-                    M.reply(`Try again or use the link. Here's the URL: ${data.url}`)
+                    M.reply(`Try again or use the link. Here's the URL: ${data.image}`)
                 })
                 break
             } catch (e) {
