@@ -6,7 +6,7 @@ import { IParsedArgs, ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'eval',
+            command: 'ej',
             description: 'Evaluates JavaScript ➕ ',
             category: 'dev',
             dm: true,
