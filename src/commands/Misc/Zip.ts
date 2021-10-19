@@ -19,7 +19,7 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        if (!joined) return void M.reply('Please provide me the ZIP code.')
+        if (!joined) return void M.reply('Please provide me the ZIP code and I am only support for LK codes.')
         const place = joined.trim()
         await axios.get(`https://api.zippopotam.us/LK/${place}`)
 /* Note
