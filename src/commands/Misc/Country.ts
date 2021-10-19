@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'country',
-            aliases: ['wthr'],
+            aliases: ['Country'],
             description: 'I can tell your Country. ',
             category: 'misc',
             usage: `${client.config.prefix}country [your_name]`,
