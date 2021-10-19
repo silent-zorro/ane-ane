@@ -29,7 +29,7 @@ export default class Command extends BaseCommand {
  */
         .then((response) => {
                 // console.log(response);
-                const text = `🔎 Info for the ZIP Exclusive from ISURU *${place}* found\n\n🌎 *Country:* ${response.data.country}\n*🗺 Place:* ${response.data.places}\n`
+                const text = `🔎 Info for the ZIP Exclusive from ISURU *${place}* found\n\n🌎 *Country:* ${response.data.country}\n`
                 M.reply(text);
             }).catch(err => {
                 M.reply(`Sorry, couldn't find any data related to *${place}*.`)
