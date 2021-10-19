@@ -9,19 +9,19 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'weather',
-            aliases: ['wthr'],
-            description: 'Gives you the weather of the given state or city. ',
+            command: 'ipinfo',
+            aliases: ['IP'],
+            description: 'Gives you the info of the given IP address. ',
             category: 'educative',
-            usage: `${client.config.prefix}weather [place_name]`,
+            usage: `${client.config.prefix}ipinfo [ip]`,
             baseXp: 50
         })
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        if (!joined) return void M.reply('Please provide me the place name.')
+        if (!joined) return void M.reply('Please provide me the ip address.')
         const place = joined.trim()
-        await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${place}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=tr`)
+        await axios.get(`https://freegeoip.app/json/${place}`)
 /* Note
   If you want to add some response, we'd recommend you to explore the json itself which provided link returns.
   This stability of the url and API KEY is not guaranteed.
@@ -29,10 +29,10 @@ export default class Command extends BaseCommand {
  */
         .then((response) => {
                 // console.log(response);
-                const text = `🔎 Weather for the place *${place}* found\n\n🌸 *Place:* ${response.data.name}\n*💮 Country:* ${response.data.sys.country}\n🌈 *Weather:* ${response.data.weather[0].description}\n🌡️ *Temperature:* ${response.data.main.temp}°C\n❄️ *Minimum Temperature:* ${response.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${response.data.main.temp_max}°C\n💦 *Humidity:* ${response.data.main.humidity}%\n🎐 *Wind:* ${response.data.wind.speed} km/h\n`
+                const text = `🔎 Info for the IP *${place}* found\n\n🌸 *IP:* ${response.data.ip}\n*💮 Country:* ${response.data.country_name}\n🌈 *Country code:* ${response.data.country_code}\n🌡️ *Region code:* ${response.data.region_code}\n❄️ *Province:* ${response.data.region_name}\n📛 *City:* ${response.data.city}\n💦 *ZIP Code:* ${response.data.zip_code}\n🎐 *Time Zone:* ${response.data.time_zone}\n`
                 M.reply(text);
             }).catch(err => {
-                M.reply(`Sorry, couldn't find any state or place name related to *${place}*.`)
+                M.reply(`Sorry, couldn't find any Data related to *${place}*.`)
             }
             )
     };
