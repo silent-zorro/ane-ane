@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
             command: 'ipinfo',
             aliases: ['IP'],
             description: 'Gives you the info of the given IP address. ',
-            category: 'educative',
+            category: 'misc',
             usage: `${client.config.prefix}ipinfo [ip]`,
             baseXp: 50
         })
@@ -29,7 +29,7 @@ export default class Command extends BaseCommand {
  */
         .then((response) => {
                 // console.log(response);
-                const text = `🔎 Info for the IP *${place}* found\n\n🌸 *IP:* ${response.data.ip}\n*💮 Country:* ${response.data.country_name}\n🌈 *Country code:* ${response.data.country_code}\n🌡️ *Region code:* ${response.data.region_code}\n❄️ *Province:* ${response.data.region_name}\n📛 *City:* ${response.data.city}\n💦 *ZIP Code:* ${response.data.zip_code}\n🎐 *Time Zone:* ${response.data.time_zone}\n`
+                const text = `🔎 Info for the IP *${place}* found\n\n🌌 *IP:* ${response.data.ip}\n*🌍 Country:* ${response.data.country_name}\n✨ *Country code:* ${response.data.country_code}\n🌟 *Region code:* ${response.data.region_code}\n🗺 *Province:* ${response.data.region_name}\n🗽 *City:* ${response.data.city}\n💫 *ZIP Code:* ${response.data.zip_code}\n⏰ *Time Zone:* ${response.data.time_zone}\n`
                 M.reply(text);
             }).catch(err => {
                 M.reply(`Sorry, couldn't find any Data related to *${place}*.`)
