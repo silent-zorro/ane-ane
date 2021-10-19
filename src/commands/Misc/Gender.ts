@@ -29,7 +29,7 @@ export default class Command extends BaseCommand {
  */
         .then((response) => {
                 // console.log(response);
-                const text = `🔎 Info for the name *${place}* found\n\n🌸 *Name:* ${response.data.name}\n*💮 Gender:* ${response.data.gender}\n`
+                const text = `🔎 Info for the name *${place}* found\n\n🍁 *Name:* ${response.data.name}\n*💫 Gender:* ${response.data.gender}\n`
                 M.reply(text);
             }).catch(err => {
                 M.reply(`Sorry, couldn't find any data related to *${place}*.`)
