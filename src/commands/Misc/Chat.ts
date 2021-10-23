@@ -8,9 +8,9 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'chat',
-            description: 'Chat with the Bot in group',
-            aliases: ['bot'],
-            category: 'fun',
+            description: 'Chat with Cortana AI by ISURU',
+            aliases: ['Cortana'],
+            category: 'misc',
             usage: `${client.config.prefix}bot (text)`,
             baseXp: 30
         })
@@ -36,7 +36,7 @@ export default class Command extends BaseCommand {
                     M.reply(`Intriguing...`)
                 })
         } else {
-            M.reply(`Chat Bot Url not set\nRefer to ${this.client.config.prefix}guide to get Chat Bot Url`)
+            M.reply(`Cortana Is busy right now`)
         }
     }
 }
