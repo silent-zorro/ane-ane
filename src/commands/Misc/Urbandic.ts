@@ -9,10 +9,10 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'urbandictionary',
+            command: 'dict',
             aliases: ['ur'],
-            description: 'Gives you the definition of the given word. ',
-            category: 'educative',
+            description: 'Gives you the definition of the given word 😂 ',
+            category: 'misc',
             usage: `${client.config.prefix}ur [Word you want to search about]`,
             baseXp: 50
         })
