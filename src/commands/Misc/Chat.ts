@@ -23,7 +23,7 @@ export default class Command extends BaseCommand {
             await axios
                 .get(
                     `${encodeURI(
-                        `http://api.brainshop.ai/get?bid=160656&key=8mdXpy58YZVwAEXF&uid=${
+                        `http://api.brainshop.ai/get?bid=${params.get('bid')}&key=${params.get('key')}&uid=${
                             M.from
                         }&msg=${M.args.slice(1)}`
                     )}`
