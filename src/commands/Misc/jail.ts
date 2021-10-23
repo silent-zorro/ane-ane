@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'jail',
             description: 'Do you hate someone?',
-            category: 'fun',
+            category: 'misc',
             usage: `${client.config.prefix}jail [(as caption | quote)[image] | @mention]`,
             baseXp: 30
         })
