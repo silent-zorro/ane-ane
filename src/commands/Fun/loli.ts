@@ -8,8 +8,8 @@ import { ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'loli',
-            description: 'Will send you random loli image',
+            command: 'animecute',
+            description: 'Another anime image',
             category: 'anime',
             usage: `${client.config.prefix}loli`
         })
