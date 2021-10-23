@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'animecute',
             description: 'Another anime image',
-            category: 'anime',
+            category: 'fun',
             usage: `${client.config.prefix}loli`
         })
     }
