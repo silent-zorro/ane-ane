@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'screenshot',
             aliases: ['ss', 'ssweb'],
-            description: 'Gives you the screenshot of the given url. ',
+            description: 'Gives you the screenshot of the given url. Exclusive from ISURU ',
             category: 'media',
             usage: `${client.config.prefix}screenshot [url]`,
             baseXp: 30
