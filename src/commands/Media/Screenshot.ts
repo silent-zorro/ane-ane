@@ -28,8 +28,8 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `🌟 Here you go.\n`,
+            `🧐 This is the preview 🧐\n`,
             undefined
-        ).catch((reason: any) => M.reply(`✖ An error occurred. Please try again later. ${reason}`))
+        ).catch((reason: any) => M.reply(`✖ An error occurred with cortana server. Please try again later. ${reason}`))
     }
 }
