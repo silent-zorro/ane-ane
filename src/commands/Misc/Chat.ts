@@ -7,7 +7,7 @@ import axios from 'axios'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'chat',
+            command: 'c',
             description: 'Chat with Cortana AI by ISURU',
             aliases: ['Cortana'],
             category: 'misc',
