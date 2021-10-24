@@ -9,17 +9,17 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'fox',
-            description: 'Will send you a fox image.',
-            aliases: ['Awoooooo'],
+            command: 'meme',
+            description: 'Will send you a Meme.',
+            aliases: ['LOL'],
             category: 'fun',
-            usage: `${client.config.prefix}fox`
+            usage: `${client.config.prefix}meme`
         })
     }
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://zxbott.herokuapp.com/husbu from the API using axios
-        const { data } = await axios.get('https://randomfox.ca/floof/')
+        const { data } = await axios.get('https://some-random-api.ml/meme')
         const buffer = await request.buffer(data.image).catch((e) => {
             return void M.reply(e.message)
         })
@@ -30,7 +30,7 @@ export default class Command extends BaseCommand {
                     MessageType.image,
                     undefined,
                     undefined,
-                    `Awoooo  🦊\n`,
+                    `LOL  😂\n`,
                     undefined
                 ).catch((e) => {
                     console.log(`This error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
