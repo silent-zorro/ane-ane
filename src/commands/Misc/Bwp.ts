@@ -8,8 +8,8 @@ import { IPackage, ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'bep',
-            description: 'Displays the info',
+            command: 'bwp',
+            description: 'Basic orkshop Practice',
             category: 'misc',
             usage: `Zoom Link`,
         })
@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `⚔️ *AMT* ⚔️\n\n💠 *Description: Basic Electronic Practices by Mrs.Ruvini Attanayaka*\n\n🌐 *Link: https://us04web.zoom.us/j/73171774282?pwd=VEEya1ZLZUlNSFF6bS9tTS81OXZndz09*\n`
+            `⚔️ *AMT* ⚔️\n\n💠 *Description: Basic Electronic Practices by Mrs.Piyaruwani Charithangi*\n\n🌐 *Link: https://learn.zoom.us/j/66007924469?pwd=NG9rMWFyZHh0Y0gveTBrQ25ONWpRdz09*\n`
         )
     }
 }
