@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'bwp',
-            description: 'Basic orkshop Practice',
+            description: 'Basic Workshop Practice',
             category: 'misc',
             usage: `Zoom Link`,
         })
@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `⚔️ *AMT* ⚔️\n\n💠 *Description: Basic Electronic Practices by Mrs.Piyaruwani Charithangi*\n\n🌐 *Link: https://learn.zoom.us/j/66007924469?pwd=NG9rMWFyZHh0Y0gveTBrQ25ONWpRdz09*\n`
+            `⚔️ *AMT* ⚔️\n\n💠 *Description: Basic Workshop Practice by Mrs.Piyaruwani Charithangi*\n\n🌐 *Link: https://learn.zoom.us/j/66007924469?pwd=NG9rMWFyZHh0Y0gveTBrQ25ONWpRdz09*\n`
         )
     }
 }
