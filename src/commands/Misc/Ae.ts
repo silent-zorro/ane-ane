@@ -9,7 +9,7 @@ export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
             command: 'ae',
-            description: 'Displays the info',
+            description: 'Automobile Electrician',
             category: 'misc',
             usage: `Zoom Link`,
         })
