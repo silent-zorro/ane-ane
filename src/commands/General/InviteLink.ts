@@ -32,7 +32,7 @@ export default class Command extends BaseCommand {
             return void M.reply('Sent you the Group Link in personal message')
         } else {
             return void M.reply(
-                `Command not enabled by the admin.\nUse *${this.client.config.prefix}act invitelink* to enable it`
+                `Only Isuru can use this Spell.\nUse *${this.client.config.prefix}act invitelink* to enable it Isuru.. I am Serious Black!`
             )
         }
     }
