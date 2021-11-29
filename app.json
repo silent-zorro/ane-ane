@@ -25,7 +25,6 @@
       "MODS": {
         "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
         "required": false
-        "value":07
       },
       "CRON": {
         "description": "Cron string to clear chats in a cycle",
