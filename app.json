@@ -18,6 +18,7 @@
     "env": {
       "PREFIX": {
         "description": "Prefix of your bot"
+        "value": "#"
       },
       "SESSION": {
         "description": "A string for the session to be classified and to get access to the server endpoints"
