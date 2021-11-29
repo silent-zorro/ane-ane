@@ -25,22 +25,26 @@
       },
       "MODS": {
         "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-        "required": false
+        "required": false,
+        "value": "94789262321, 94768384379"
       },
       "CRON": {
         "description": "Cron string to clear chats in a cycle",
         "required": false
       },
       "MONGO_URI": {
-        "description": "A secret String for Mongodb Connection.(Required)"
+        "description": "A secret String for Mongodb Connection.(Required)",
+        "value": "mongodb+srv://Isuru:Isuru@cluster0.ofhna.mongodb.net/test"
       },
       "GOOGLE_API_KEY": {
         "description": "Google API key for Google searches for MODS (Not Required)",
-        "required": false
+        "required": false,
+        "value": "AIzaSyCPXZO4pWirQNY8ORgQzFM6KggOv2xOahg"
       },
       "CHAT_BOT_URL" : {
         "description": "BrainShop API Brain url",
-        "required" : false
+        "required" : false,
+        "value": "http://api.brainshop.ai/get?bid=160656&key=8mdXpy58YZVwAEXF&uid=[uid]&msg=[msg]"
       }
     },
     "buildpacks": [
