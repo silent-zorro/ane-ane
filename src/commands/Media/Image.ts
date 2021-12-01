@@ -18,10 +18,9 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        if (!joined) return void (await M.reply(`Please give a term to search`));
-        const search: any = joined.trim();
-        const term: string = search;
-        const { data } = await axios.get('https://nekobot.xyz/api/imagegen?type=changemymind&text=${search}');
+        if (!joined) return void (await M.reply(`Please provide the url`))
+        const term = joined.trim()
+        const { data } = await axios.get('https://nekobot.xyz/api/imagegen?type=changemymind&text=${term}');
         const buffer = await request.buffer(data.message).catch((e) => {
             return void M.reply(e.message)
         })
