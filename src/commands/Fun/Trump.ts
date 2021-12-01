@@ -9,11 +9,11 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'screenshot',
-            aliases: ['ss', 'ssweb'],
-            description: 'Gives you the screenshot of the given url. Exclusive from ISURU ',
-            category: 'media',
-            usage: `${client.config.prefix}screenshot [url]`,
+            command: 'trump',
+            aliases: ['tsay', 'trump'],
+            description: 'Trump tweet. Exclusive from ISURU ',
+            category: 'fun',
+            usage: `${client.config.prefix}trump [word]`,
             baseXp: 30
         })
     }
@@ -23,12 +23,12 @@ export default class Command extends BaseCommand {
         const url = joined.trim()
         return void M.reply(
             await request.buffer(
-                `https://shot.screenshotapi.net/screenshot?&url=${url}&full_page=true&fresh=true&output=image&file_type=png&wait_for_event=load`
+                `https://nekobot.xyz/api/imagegen?type=trumptweet&text=${url}`
             ),
             MessageType.image,
             undefined,
             undefined,
-            `🧐 This is the preview 🧐\n`,
+            `😄 Go Trump Go 😄\n`,
             undefined
         ).catch((reason: any) => M.reply(`✖ An error occurred with cortana server. Please try again later. ${reason}`))
     }
