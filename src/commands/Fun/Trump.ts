@@ -22,7 +22,7 @@ export default class Command extends BaseCommand {
         if (!joined) return void (await M.reply(`Please provide the word`))
         const url = joined.trim()
         return void M.reply(
-            await request.buffer(
+            await request.bufferr(data.message).catch((e) => {(
                 `https://nekobot.xyz/api/imagegen?type=trumptweet&text=${url}`
             ),
             MessageType.image,
