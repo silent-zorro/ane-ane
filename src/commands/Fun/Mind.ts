@@ -9,26 +9,26 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'screenshot',
-            aliases: ['ss', 'ssweb'],
-            description: 'Gives you the screenshot of the given url. Exclusive from ISURU ',
+            command: 'mind',
+            aliases: ['change', 'mind'],
+            description: 'Change my Mind. Exclusive from ISURU ',
             category: 'media',
-            usage: `${client.config.prefix}screenshot [url]`,
+            usage: `${client.config.prefix}mind [word]`,
             baseXp: 30
         })
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        if (!joined) return void (await M.reply(`Please provide the url`))
+        if (!joined) return void (await M.reply(`Please provide the word`))
         const url = joined.trim()
         return void M.reply(
             await request.buffer(
-                `https://shot.screenshotapi.net/screenshot?&url=${url}&full_page=true&fresh=true&output=image&file_type=png&wait_for_event=load`
+                `https://nekobot.xyz/api/imagegen?type=changemymind&text=${url}`
             ),
             MessageType.image,
             undefined,
             undefined,
-            `🧐 This is the preview 🧐\n`,
+            `😄 Chane His Mind 😄\n`,
             undefined
         ).catch((reason: any) => M.reply(`✖ An error occurred with cortana server. Please try again later. ${reason}`))
     }
