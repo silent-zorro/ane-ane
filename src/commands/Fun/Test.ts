@@ -6,10 +6,10 @@ import axios from 'axios'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'covid',
+            command: 'test',
             description: 'get the covid-19 info of the current place',
             aliases: ['COVID'],
-            category: 'misc',
+            category: 'fun',
             usage: `${client.config.prefix}covid [name]`
         })
     }
@@ -19,15 +19,15 @@ export default class Command extends BaseCommand {
 
         if (!joined) return void M.reply('🔎 Provide a place name')
         const term = joined.trim()
-        await axios.get(`https://api.abirhasan.wtf/covid19/v1?country=${term}`)
-        .then((response) => {
-                // console.log(response);
-                const text = `🦠 Covid Information of the place *${term}* is \n\n 🧪 *TotalTests:* ${response.data.TotalTests} \n 🩺 *ActiveCases:* ${response.data.ActiveCases} \n 🏥 *Confirmed:* ${response.data.Confirmed} \n 💉 *Critical:* ${response.data.Critical} \n 🎉 *Recovered:* ${response.data.Recovered} \n 🧫 *NewCases:* ${response.data.NewCases} \n 💔 *NewDeaths:* ${response.data.NewDeaths} \n ✏ *TotalCases:* ${response.data.TotalCases} \n 🌍 *Country:* ${response.data.Country} `
-                M.reply(text);
-            })
-            .catch(err => {
-                M.reply(`🔍 Please provide a valid place name \n Error: ${err}`)
-            }
-            )
-    };
+        return void M.reply(
+            await request.buffer(
+                `https://nekobot.xyz/api/imagegen?type=changemymind&text=${term}`
+            ),
+            MessageType.image,
+            undefined,
+            undefined,
+            `🧐 This is the preview 🧐\n`,
+            undefined
+        ).catch((reason: any) => M.reply(`✖ An error occurred with cortana server. Please try again later. ${reason}`))
+    }
 }
