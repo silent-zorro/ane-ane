@@ -12,7 +12,7 @@ export default class Command extends BaseCommand {
             command: 'mind',
             aliases: ['change', 'mind'],
             description: 'Change my Mind. Exclusive from ISURU ',
-            category: 'media',
+            category: 'fun',
             usage: `${client.config.prefix}mind [word]`,
             baseXp: 30
         })
