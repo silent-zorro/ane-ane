@@ -10,7 +10,7 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'test',
+            command: 'jaik',
             description: `Anime characters ;)\nType ${client.config.prefix}ac to check all available options`,
             aliases: ['ac', 'achar'],
             category: 'fun',
@@ -20,13 +20,18 @@ export default class Command extends BaseCommand {
     }
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
-        // consider neko and kitsune in furry
-        
-        const term = joined.trim()
+        const image = await (M.WAMessage?.message?.imageMessage
+            ? this.client.downloadMediaMessage(M.WAMessage)
+            : M.quoted?.message?.message?.imageMessage
+            ? this.client.downloadMediaMessage(M.quoted.message)
+            : M.mentioned[0]
+            ? this.client.getProfilePicture(M.mentioned[0])
+            : this.client.getProfilePicture(M.quoted?.sender || M.sender.jid))
+        if (!image) return void M.reply(`Couldn't fetch the required Image`)
 
         // fetch result of https://waifu.pics/api/sfw from the API using axios
-        const { data } = await axios.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${term}`)
-        const buffer = await request.buffer(data.message).catch((e) => {
+        const { data } = await axios.get(`https://some-random-api.ml/canvas/jail?avatar=${image}`)
+        const buffer = await request.buffer(data.response).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
