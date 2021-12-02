@@ -9,10 +9,10 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'dict',
+            command: 'test',
             aliases: ['dic'],
             description: 'Gives you the definition of the given word 😂 ',
-            category: 'misc',
+            category: 'fun',
             usage: `${client.config.prefix}ur [Word you want to search about]`,
             baseXp: 50
         })
@@ -24,15 +24,12 @@ export default class Command extends BaseCommand {
         console.log(term,joined)
         await axios
             .get(
-                `http://api.urbandictionary.com/v0/define?term=${term}`
+                `https://nekobot.xyz/api/imagegen?type=changemymind&text=${term}`
             )
            .then((response) => {
                 // console.log(response);
-                const text = `📚 *urban dictionary :* ${term}\n\n📖 *Definition :* ${response.data.list[0].definition.replace(/\[/g,'').replace(/\]/g,'')}\n\n💬 *Example :* ${response.data.list[0].example.replace(/\[/g,'').replace(/\]/g,'')}`
-          M.reply(text)
+                const image = `${response.data.message`
+          M.reply(image)
                 })
-            .catch((err) => {
-                M.reply(`Sorry, couldn't find any definations related to *${term}*.`)
-            })
     }
 }
