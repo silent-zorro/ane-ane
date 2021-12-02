@@ -10,10 +10,10 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'animechar',
+            command: 'test',
             description: `Anime characters ;)\nType ${client.config.prefix}ac to check all available options`,
             aliases: ['ac', 'achar'],
-            category: 'anime',
+            category: 'fun',
             usage: `${client.config.prefix}ac (option)`,
             baseXp: 20
         })
@@ -21,25 +21,12 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
         // consider neko and kitsune in furry
-        const char = ['neko', 'shinobu', 'megumin', 'awoo']
-        const term = joined.trim().split(' ')[0].toLowerCase()
-        let text = ''
-        char.map((c) => {
-            text += `📍${c.charAt(0).toUpperCase() + c.slice(1)}\n`
-            // index % 4 === 3 ? (text += '\n') : (text += ' '.repeat(10 - c.length))
-        })
-        if (!term)
-            return void M.reply(
-                `🪧 *OPTIONS:*\n${text}Use ${this.client.config.prefix}ac (option) to get Characters\nExample: ${this.client.config.prefix}ac neko`
-            )
-        if (!char.includes(term))
-            return void M.reply(
-                `🧧 Invalid option! 🧧\nUse ${this.client.config.prefix}ac to see all available options`
-            )
+        
+        const term = joined.trim()
 
         // fetch result of https://waifu.pics/api/sfw from the API using axios
-        const { data } = await axios.get(`https://waifu.pics/api/sfw/${term}`)
-        const buffer = await request.buffer(data.url).catch((e) => {
+        const { data } = await axios.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${term}`)
+        const buffer = await request.buffer(data.message).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
