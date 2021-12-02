@@ -24,12 +24,15 @@ export default class Command extends BaseCommand {
             ? this.client.getProfilePicture(M.mentioned[0])
             : this.client.getProfilePicture(M.quoted?.sender || M.sender.jid))
 
-            await axios.get(`https://some-random-api.ml/canvas/jail?avatar=${image}`)
-            .then((response)=>{
-                M.reply(response.data)
-            }).catch((e)=>{
-                M.reply('sorry couldn\'t send the image')
-            })
-
+           return void M.reply(
+            await request.buffer(
+                `https://some-random-api.ml/canvas/jail?avatar=${image}`
+            ),
+            MessageType.image,
+            undefined,
+            undefined,
+            `😅 Count the Bars Now 😅\n`,
+            undefined
+        ).catch((reason: any) => M.reply(`✖ An error occurred with cortana server. Please try again later. ${reason}`))
     }
 }
