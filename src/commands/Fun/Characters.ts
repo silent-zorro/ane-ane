@@ -10,11 +10,11 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'test',
-            description: `Anime characters ;)\nType ${client.config.prefix}ac to check all available options`,
-            aliases: ['ac', 'achar'],
+            command: 'mind',
+            description: `Change his mind`,
+            aliases: ['mind', 'change'],
             category: 'fun',
-            usage: `${client.config.prefix}ac (option)`,
+            usage: `${client.config.prefix}mind words`,
             baseXp: 20
         })
     }
@@ -36,7 +36,7 @@ export default class Command extends BaseCommand {
                     MessageType.image,
                     undefined,
                     undefined,
-                    `Here you go.\n`,
+                    `😅 Change my Mind 😅\n`,
                     undefined
                 ).catch((e) => {
                     console.log(`This Error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
