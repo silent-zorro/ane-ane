@@ -9,7 +9,7 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'fox',
+            command: 'test',
             description: 'Will send you a fox image.',
             aliases: ['Awoooooo'],
             category: 'fun',
@@ -17,10 +17,10 @@ export default class Command extends BaseCommand {
         })
     }
 
-    run = async (M: ISimplifiedMessage): Promise<void> => {
-        // fetch result of https://zxbott.herokuapp.com/husbu from the API using axios
-        const { data } = await axios.get('https://randomfox.ca/floof/')
-        const buffer = await request.buffer(data.image).catch((e) => {
+    run = async (M: ISimplifiedMessage, { joined }: IParsedArgs): Promise<void> => {
+        const term = joined.trim()
+        const { data } = await axios.get('https://nekobot.xyz/api/imagegen?type=changemymind&text=${term}')
+        const buffer = await request.buffer(data.message).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
