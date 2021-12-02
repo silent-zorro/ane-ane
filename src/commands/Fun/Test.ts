@@ -28,7 +28,7 @@ export default class Command extends BaseCommand {
             )
            .then((response) => {
                 // console.log(response);
-                const image = `${response.data.message`
+                const text = `${response.data.message`
           M.reply(image)
                 })
     }
