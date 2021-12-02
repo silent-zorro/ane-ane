@@ -10,11 +10,11 @@ import { MessageType } from '@adiwajshing/baileys'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'test',
-            description: `Anime characters ;)\nType ${client.config.prefix}ac to check all available options`,
-            aliases: ['ac', 'achar'],
+            command: 'trump',
+            description: `Trump Tweet`,
+            aliases: ['trump', 'tweet'],
             category: 'fun',
-            usage: `${client.config.prefix}ac (option)`,
+            usage: `${client.config.prefix}trump words`,
             baseXp: 20
         })
     }
@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
         const term = joined.trim()
 
         // fetch result of https://waifu.pics/api/sfw from the API using axios
-        const { data } = await axios.get(`https://nekobot.xyz/api/imagegen?type=changemymind&text=${term}`)
+        const { data } = await axios.get(`https://nekobot.xyz/api/imagegen?type=trumptweet&text=${term}`)
         const buffer = await request.buffer(data.message).catch((e) => {
             return void M.reply(e.message)
         })
@@ -36,7 +36,7 @@ export default class Command extends BaseCommand {
                     MessageType.image,
                     undefined,
                     undefined,
-                    `Here you go.\n`,
+                    `😅 Trump Tweeted 😅\n`,
                     undefined
                 ).catch((e) => {
                     console.log(`This Error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
