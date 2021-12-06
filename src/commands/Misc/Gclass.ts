@@ -8,10 +8,10 @@ import { IPackage, ISimplifiedMessage } from '../../typings'
 export default class Command extends BaseCommand {
     constructor(client: WAClient, handler: MessageHandler) {
         super(client, handler, {
-            command: 'bep',
-            description: 'Displays the info',
+            command: 'grooms',
+            description: 'Google class rooms',
             category: 'misc',
-            usage: `Zoom Link`,
+            usage: `#grooms`,
         })
     }
 
@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
             MessageType.image,
             undefined,
             undefined,
-            `⚔️ *AMT* ⚔️\n\n💠 *Description: Basic Electronic Practices by Mrs.Ruvini Attanayaka*\n\n🌐 *Link: https://us04web.zoom.us/j/73171774282?pwd=VEEya1ZLZUlNSFF6bS9tTS81OXZndz09*\n`
+            `⚔️ *AMT Google Class Rooms* ⚔️\n\n🍁 *Basic work shop practice 1: [Code]  "wr7pam4"*\n\n🍁 *OSH:  https://classroom.google.com/c/Mzc5OTg1OTM0ODA2?cjc=rak5pb [code :rak5pbq]*\n\n🍁 *Basic electronic practice: [Code]  "zdt77my"*\n\n🍁 *Automobile mechanic: https://classroom.google.com/c/MzgwNDYzNDg1OTE5?cjc=mgql55p*\n\n🍁 *English and IT: https://classroom.google.com/c/MzgwNDc5MTMxODcx?cjc=ift6snb*\n\n🍁 *Basic engineering drawing: https://classroom.google.com/c/NDQxNzA5Mjk0NDg1?cjc=bzt672a (code: bzt672a)*\n\n🍁 *Automobile electrician: [Code]  "vuesqax"*\n`
         )
     }
 }
