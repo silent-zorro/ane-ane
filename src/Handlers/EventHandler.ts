@@ -19,7 +19,7 @@ export default class EventHandler {
         const text = add
             ? `- ${group.subject || '___'} -\n\n💠 *Group Description:*\n${
                   group.desc
-              }\n\nHope you follow the rules and have fun!\n*‣ ${event.participants
+              }\n\nHi Welcome Friend!\n*‣ ${event.participants
                   .map((jid) => `@${jid.split('@')[0]}`)
                   .join(', ')}`
             : event.action === 'remove'
