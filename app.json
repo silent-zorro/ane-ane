@@ -13,7 +13,7 @@
     ],
     "website": "https://github.com/silent-zorro/Kaoi#readme",
     "repository": "https://github.com/silent-zorro/Kaoi.git",
-    "logo": "https://avatars.githubusercontent.com/u/46681482?v=4",
+    "logo": "https://avatars.githubusercontent.com/u/91269387?s=400&u=f2820d58b6554790852d2b8a9a31f6967aa4fa12&v=4",
     "success_url": "/",
     "env": {
       "PREFIX": {
@@ -26,7 +26,7 @@
       "MODS": {
         "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
         "required": false,
-        "value": "94789262321, 94768384379"
+        "value": "94768384379"
       },
       "CRON": {
         "description": "Cron string to clear chats in a cycle",
