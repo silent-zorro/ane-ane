@@ -10,7 +10,7 @@
   Button : If you are deploying normally
 
   
-  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/silent-zorro/Kaoi/blob/main)
+  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/silent-zorro/Cortana)
 
   Button : If you are deploying from a fork
   
